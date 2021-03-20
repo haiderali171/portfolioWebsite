@@ -1,0 +1,241 @@
+{% load static %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% trans Rhenium %}</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href=" {% static '/css/main.css' %} ">
+    <link type="text/css" rel="stylesheet" href=" {% static '/css/another.css' %} ">
+    <link type="text/css" rel="stylesheet" href=" {% static '/css/languageswitcher.css' %} ">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body id="root">
+  <header>
+    <div class="menu-toggler">
+      <div class="bar half start"></div>
+      <div class="bar"></div>
+      <div class="bar half end"></div>
+    </div>
+    <nav class="top-nav">
+        <ul class="nav-list">
+          <li>
+            <a href=" {% url 'about' %} " class="nav-link">Home</a>
+          </li>
+          <li>
+            <a href= '#aboutme' class="nav-link">About Me</a>
+          </li>
+          <li>
+            <a href= '#services' class="nav-link">Services</a>
+          </li>
+          <li>
+            <a href= '#portfolio' class="nav-link">Portfolio</a>
+          </li>
+          <li>
+            <a href=" {% url 'blog:blogapp' %} " class="nav-link">Blog</a>
+          </li>
+          <li>
+            <a href= '#experience' class="nav-link">Experience</a>
+          </li>
+          <li>
+            <a href= '#contact' class="nav-link">Contact</a>
+          </li>
+        </ul>
+    </nav>
+
+
+    <div class="dropdown">
+    <form class="language-switcher" action="{% url 'set_language' %}" method="post">
+      {% csrf_token %}
+      <input name="next" type="hidden" value="/" >
+      <select name="language">
+          {% get_current_language as LANGUAGE_CODE %}
+          {% get_available_languages as LANGUAGES %}
+          {% get_language_info_list for LANGUAGES as languages %}
+          {% for language in languages %}
+              <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                  {{ language.name_local }} ({{ language.code }})
+              </option>
+          {% endfor %}
+      </select>
+      <button type="submit">Go</button>
+  </form>
+
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">{% trans 'English' %}</a>
+        <a class="dropdown-item" href="#">Spanish(Espanol)</a>
+        <a class="dropdown-item" href="#">French</a>
+      </div>
+    </div>
+
+    <div class="landing-text">
+      <h1>Haider Ali</h1>
+      <h6>{% trans 'And His PortFolio Website' %}</h6>
+    </div>
+  </header>
+
+  <div class="thebody" id="thebody">
+  <section class="aboutme" id="aboutme">
+  </section>
+    
+
+  <section class="services" id="services">
+    <div class="container">
+      <div class="services-heading section-heading">
+        <h1>Services</h1>
+        <h6>More to come in the Future</h6>
+      </div>
+      <div class="my-product text-center">
+        <div class="product1">
+          <h1>Content Writing</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <div class="product2 text-center">
+          <h1>Web Development</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="portfolio" id="portfolio">
+    <div class="container">
+      <div class="portfolio-heading section-heading">
+        <h1>PortFolio</h1>
+        <h2>Have a look!</h2>
+      </div>
+      <div class="portfolio-item tex">
+          <div class="portfolio-img">
+            <img src=" {% static 'images/portitem1.jpeg' %} " alt="">
+          </div>
+          <div class="portfolio-description text-center">
+              <h3>Blog, Short Stories and Content</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <a href="#" class="cta">View details</a>
+          </div>
+      </div>
+      <div class="portfolio-item">
+          <div class="portfolio-img">
+            <img src=" {% static 'images/portitem2.jpeg' %} " alt="">
+          </div>
+          <div class="portfolio-description text-center">
+              <h3>Websites, Application, and Other Programming Stuff</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <a href="#" class="cta">View details</a>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="experience" id="experience">
+    <div class="container">
+      <div class="experience-heading section-heading">
+        <h1>Experience</h1>
+      </div>
+    <div class="text-center">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-heading section-heading">
+        <h1>Contact</h1>
+        <h3>Lets be partners</h3>
+      </div>
+      {% load widget_tweaks %}
+
+<form method="post" novalidate>
+  {% csrf_token %}
+
+  {% for hidden_field in form.hidden_fields %}
+    {{ hidden_field }}
+  {% endfor %}
+
+  {% if form.non_field_errors %}
+    <div class="alert alert-danger" role="alert">
+      {% for error in form.non_field_errors %}
+        {{ error }}
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  {% for field in form.visible_fields %}
+    <div class="form-group">
+      {{ field.label_tag }}
+
+      {% if form.is_bound %}
+        {% if field.errors %}
+          {% render_field field class="form-control is-invalid" %}
+          {% for error in field.errors %}
+            <div class="invalid-feedback">
+              {{ error }}
+            </div>
+          {% endfor %}
+        {% else %}
+          {% render_field field class="form-control is-valid" %}
+        {% endif %}
+      {% else %}
+        {% render_field field class="form-control" %}
+      {% endif %}
+
+      {% if field.help_text %}
+        <small class="form-text text-muted">{{ field.help_text }}</small>
+      {% endif %}
+    </div>
+  {% endfor %}
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+    </div>  
+  </section>
+  </div>
+  <footer>
+  <div class="pt-5 pb-5 footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5 col-xs-12 about-company">
+          <h2>Heading</h2>
+          <p class="pr-5 text-white-50">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac ante mollis quam tristique convallis </p>
+          <p><a href="#"><i class="fa fa-facebook-square mr-1"></i></a><a href="#"><i class="fa fa-linkedin-square"></i></a></p>
+        </div>
+        <div class="col-lg-3 col-xs-12 inks">
+          <h4 class="mt-lg-0 mt-sm-3">Links</h4>
+            <ul class="m-0 p-0">
+              <li>- <a href="#">Lorem ipsum</a></li>
+              <li>- <a href="#">Nam mauris velit</a></li>
+              <li>- <a href="#">Etiam vitae mauris</a></li>
+              <li>- <a href="#">Fusce scelerisque</a></li>
+              <li>- <a href="#">Sed faucibus</a></li>
+              <li>- <a href="#">Mauris efficitur nulla</a></li>
+            </ul>
+        </div>
+        <div class="col-lg-4 col-xs-12 location">
+          <h4 class="mt-lg-0 mt-sm-4">Location</h4>
+          <p>22, Lorem ipsum dolor, consectetur adipiscing</p>
+          <p class="mb-0"><i class="fa fa-phone mr-3"></i>(541) 754-3010</p>
+          <p><i class="fa fa-envelope-o mr-3"></i>info@hsdf.com</p>
+        </div>
+      </div>
+      <div class="row mt-5">
+        <div class="col copyright">
+          <p class=""><small class="text-white-50">© 2019. All Rights Reserved.</small></p>
+        </div>
+      </div>
+    </div>
+    </div>
+  </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script type="text/javascript" src=" {% static '/js/main.js' %} "></script>
+    <script type="text/javascript" src=" {% static '/frontend/main.js' %} "></script>
+
+</body>
+</html>
