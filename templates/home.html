@@ -13,6 +13,7 @@
     <link type="text/css" rel="stylesheet" href=" {% static '/css/another.css' %} ">
     <link type="text/css" rel="stylesheet" href=" {% static '/css/languageswitcher.css' %} ">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="http://anijs.github.io/lib/anicollection/anicollection.css">
 </head>
 <body id="root">
   <header>
@@ -166,7 +167,7 @@
   {% endif %}
 
   {% for field in form.visible_fields %}
-    <div class="form-group">
+    <div class="form-group" data-anijs="if: mouseover, do: animated fadeInUpBig">
       {{ field.label_tag }}
 
       {% if form.is_bound %}
@@ -236,6 +237,7 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script type="text/javascript" src=" {% static '/js/main.js' %} "></script>
     <script type="text/javascript" src=" {% static '/frontend/main.js' %} "></script>
+    <script src="anijs-min.js"></script>
 
 </body>
 </html>
