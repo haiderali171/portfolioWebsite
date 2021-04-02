@@ -61,6 +61,7 @@ SITE_ID =1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -96,10 +97,23 @@ WSGI_APPLICATION = 'thesite.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
+
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+
+        'NAME': 'DDB',
+
+        'USER': 'django',
+
+        'PASSWORD': 'zarish404',
+
+        'HOST': 'localhost',
+
+        'PORT': '',
+
     }
+
 }
 
 
@@ -161,6 +175,8 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 
 # Emails
 # 
@@ -196,7 +212,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 CART_SESSION_ID = 'cart'
 
 
-# Braintree settings
 BRAINTREE_MERCHANT_ID = '9x8qb2v5sx7h4tt3' # Merchant ID 
 BRAINTREE_PUBLIC_KEY = 'v9df48hngtg82s5j' # Public Key 
 BRAINTREE_PRIVATE_KEY = '60cf65ae3d88776db135f9fe08b04670' # Private key
@@ -205,6 +220,7 @@ BRAINTREE_PRIVATE_KEY = '60cf65ae3d88776db135f9fe08b04670' # Private key
 
 
 BRAINTREE_CONF = braintree.Configuration( braintree.Environment.Sandbox, BRAINTREE_MERCHANT_ID, BRAINTREE_PUBLIC_KEY, BRAINTREE_PRIVATE_KEY)
+
 
 
 

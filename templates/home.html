@@ -167,7 +167,7 @@
   {% endif %}
 
   {% for field in form.visible_fields %}
-    <div class="form-group" data-anijs="if: mouseover, do: animated fadeInUpBig">
+    <div class="form-group" data-anijs="if: click, do: rubberBand animated">
       {{ field.label_tag }}
 
       {% if form.is_bound %}
@@ -235,9 +235,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://anijs.github.io/lib/anijs/anijs.js"></script>
+    <script src="https://anijs.github.io/lib/anijs/helpers/scrollreveal/anijs-helper-scrollreveal.js"></script>
     <script type="text/javascript" src=" {% static '/js/main.js' %} "></script>
     <script type="text/javascript" src=" {% static '/frontend/main.js' %} "></script>
-    <script src="anijs-min.js"></script>
-
 </body>
 </html>
