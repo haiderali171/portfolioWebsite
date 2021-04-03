@@ -110,7 +110,7 @@ DATABASES = {
 
         'HOST': 'localhost',
 
-        'PORT': '5432',
+        'PORT': '5433',
 
     }
 
