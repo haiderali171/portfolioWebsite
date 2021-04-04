@@ -12,9 +12,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
-from . import local_settings
 import braintree
-
+from .settings import PROJECT_ROOT, SITE_ROOT
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
@@ -27,18 +26,10 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = '5&unyr-cbl$b%%t0(e4r9&-w1$g1eyhx%#7q5jblq86)9eitxj'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
+TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = ['haiderdjangoapp.herokuapp.com']
-
-
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-
-try:
-  from local_settings import *
-except Exception as e:
-  pass
-
 
 
 # Application definition
@@ -119,7 +110,7 @@ DATABASES = {
 
         'PASSWORD': 'zarish404',
 
-        'HOST': '127.0.0.1',
+        'HOST': 'localhost',
 
         'PORT': '5432',
 
