@@ -11,12 +11,14 @@ click-didyoumean==0.0.3
 click-repl==0.1.6
 cryptography==3.2
 dj-database-url==0.5.0
+dj-static==0.0.6
 Django==3.1.2
 django-extensions==3.0.9
 django-widget-tweaks==1.4.8
 djangorestframework==3.12.2
 easy-thumbnails==2.7
 flower==0.9.5
+foreman==0.9.7
 gunicorn==20.1.0
 humanize==3.1.0
 idna==2.10
@@ -30,8 +32,11 @@ pycparser==2.20
 pyOpenSSL==19.1.0
 pytz==2020.1
 requests==2.25.0
+requests-futures==1.0.0
 six==1.15.0
 sqlparse==0.3.1
+start==0.2
+static3==0.7.0
 tornado==6.1
 urllib3==1.26.2
 vine==5.0.0
