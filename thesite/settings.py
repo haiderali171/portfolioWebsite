@@ -14,6 +14,7 @@ from pathlib import Path
 import os
 from . import local_settings
 import braintree
+import dj_database_url
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -107,25 +108,8 @@ WSGI_APPLICATION = 'thesite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-
-    'default': {
-
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-
-        'NAME': 'DDB',
-
-        'USER': 'django',
-
-        'PASSWORD': 'zarish404',
-
-        'HOST': '127.0.0.1',
-
-        'PORT': '5432',
-
-    }
-
-}
+DATABASES = {}
+DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
 
 # Password validation
@@ -189,10 +173,7 @@ STATICFILES_DIRS = [
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
-# Emails
-# 
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
 # Login and Logout 
@@ -233,6 +214,9 @@ BRAINTREE_PRIVATE_KEY = '60cf65ae3d88776db135f9fe08b04670' # Private key
 BRAINTREE_CONF = braintree.Configuration( braintree.Environment.Sandbox, BRAINTREE_MERCHANT_ID, BRAINTREE_PUBLIC_KEY, BRAINTREE_PRIVATE_KEY)
 
 
+#sslmode
 
 
+options = DATABASES['default'].get('OPTIONS', {})
+options.pop('sslmode', None)
 

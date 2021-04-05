@@ -28,7 +28,7 @@ SECRET_KEY = '5&unyr-cbl$b%%t0(e4r9&-w1$g1eyhx%#7q5jblq86)9eitxj'
 DEBUG = True
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = ['haiderdjangoapp.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
