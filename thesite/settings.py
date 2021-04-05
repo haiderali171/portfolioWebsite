@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = '5&unyr-cbl$b%%t0(e4r9&-w1$g1eyhx%#7q5jblq86)9eitxj'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['haiderdjangoapp.herokuapp.com']
 
