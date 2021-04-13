@@ -164,15 +164,15 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
 
 #STATICFILES_DIRS = [
  #   os.path.join(BASE_DIR, 'static')
 #]
 
-STATICFILES_STORAGE = 'thesite.storage.WhiteNoiseStaticFilesStorage'
-
-
+# STATICFILES_STORAGE = 'thesite.storage.WhiteNoiseStaticFilesStorage'
 
 
 
