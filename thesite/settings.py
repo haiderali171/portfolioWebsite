@@ -121,7 +121,7 @@ WSGI_APPLICATION = 'thesite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'theSiteDB',
+        'NAME': 'thesitedb',
         'USER': 'haider',
         'PASSWORD': 'zarish404',
         'HOST': 'localhost',
