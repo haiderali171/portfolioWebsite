@@ -38,7 +38,7 @@ DEBUG = True
 
 # ALLOWED_HOSTS = ['.herokuapp.com']
 
-ALLOWED_HOSTS = ['.herokuapp.com']
+ALLOWED_HOSTS = ['104.236.14.201']
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
