@@ -28,7 +28,7 @@ export const App = () => {
     <Wrapper>
       <Div animate={show.itemOne} ref={ourRef}>
       <section className="aboutme" id="aboutme">
-    <MediaQuery query='(min-device-width: 1224px)'>
+    <MediaQuery query='(max-device-width: 1224px)'>
   <div className="container">
     <div className="aboutme-details">
       <div className="aboutme-heading">
