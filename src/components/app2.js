@@ -3,6 +3,8 @@ import ReactDOM from "react-dom";
 import styled from "styled-components";
 import './main.css';
 
+var MediaQuery = require('react-responsive');
+
 export const App = () => {
   const [show, doShow] = useState({
     itemOne: false
@@ -26,6 +28,7 @@ export const App = () => {
     <Wrapper>
       <Div animate={show.itemOne} ref={ourRef}>
       <section className="aboutme" id="aboutme">
+    <MediaQuery query='(min-device-width: 1224px)'>
   <div className="container">
     <div className="aboutme-details">
       <div className="aboutme-heading">
@@ -49,6 +52,7 @@ export const App = () => {
       </div>
     </div>
   </div>
+  </MediaQuery>
 </section>
 
       </Div>
