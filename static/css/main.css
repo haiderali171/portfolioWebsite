@@ -273,7 +273,7 @@ li{
 }
 
 .aboutme-heading h1{
-  font-size: 15rem;
+  font-size: 10em;
   font-family: 'Permanent Marker', cursive;
   background: linear-gradient(to top, #131210, #f3f0f2);
   -webkit-background-clip: text;
@@ -282,7 +282,7 @@ li{
 }
 
 .aboutme-heading h6{
-  font-size: 2rem;
+  font-size: 2em;
   font-weight: 300;
 }
 
