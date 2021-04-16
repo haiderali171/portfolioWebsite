@@ -26,9 +26,10 @@ export const App = () => {
   }, []);
   return (<>
     <Wrapper>
+    <MediaQuery query='(max-device-width: 767px)'> 
       <Div animate={show.itemOne} ref={ourRef}>
       <section className="aboutme" id="aboutme">
-    <MediaQuery query='(max-device-width: 375px)'>
+    
   <div className="container">
     <div className="aboutme-details">
       <div className="aboutme-heading">
@@ -52,11 +53,10 @@ export const App = () => {
       </div>
     </div>
   </div>
-  </MediaQuery>
 </section>
 
       </Div>
-
+      </MediaQuery>
     </Wrapper>
   </>);
 };
