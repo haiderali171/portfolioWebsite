@@ -2,14 +2,24 @@ import React, { useLayoutEffect, useRef, useState } from "react";
 import ReactDOM from "react-dom";
 import styled from "styled-components";
 import './main.css';
-
-var MediaQuery = require('react-responsive');
+import { useMediaQuery } from 'react-responsive'
 
 export const App = () => {
   const [show, doShow] = useState({
     itemOne: false
   });
   const ourRef = useRef(null);
+
+  const isDesktopOrLaptop = useMediaQuery({
+    query: '(min-device-width: 1224px)'
+  })
+  const isBigScreen = useMediaQuery({ query: '(min-device-width: 1824px)' })
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
+  const isTabletOrMobileDevice = useMediaQuery({
+    query: '(max-device-width: 1224px)'
+  })
+  const isPortrait = useMediaQuery({ query: '(orientation: portrait)' })
+  const isRetina = useMediaQuery({ query: '(min-resolution: 2dppx)' })
 
   useLayoutEffect(() => {
     const topPos = element => element.getBoundingClientRect().top;
@@ -26,14 +36,13 @@ export const App = () => {
   }, []);
   return (<>
     <Wrapper>
-    <MediaQuery query='(max-device-width: 767px)'> 
       <Div animate={show.itemOne} ref={ourRef}>
       <section className="aboutme" id="aboutme">
     
   <div className="container">
     <div className="aboutme-details">
       <div className="aboutme-heading">
-        <h1>About Me</h1>
+        { isTabletOrMobile && <h1>About Me</h1> }
         <h6>Some words about who I am!.</h6>
       </div>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -56,7 +65,6 @@ export const App = () => {
 </section>
 
       </Div>
-      </MediaQuery>
     </Wrapper>
   </>);
 };
