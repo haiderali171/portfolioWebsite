@@ -2,7 +2,7 @@ import React, { useLayoutEffect, useRef, useState } from "react";
 import ReactDOM from "react-dom";
 import styled from "styled-components";
 import './main.css';
-import { useMediaQuery } from 'react-responsive'
+import { useMediaQuery } from 'react-responsive';
 
 export const App = () => {
   const [show, doShow] = useState({
@@ -42,7 +42,7 @@ export const App = () => {
   <div className="container">
     <div className="aboutme-details">
       <div className="aboutme-heading">
-        { isTabletOrMobile && <h1>About Me</h1> }
+        { isTabletOrMobile && <> <h1>About Me</h1> </> }
         <h6>Some words about who I am!.</h6>
       </div>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
