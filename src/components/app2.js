@@ -43,9 +43,9 @@ export const App = () => {
     <div className="aboutme-details">
       <div className="aboutme-heading">
         { isTabletOrMobile && <> <h1>About Me</h1> </> }
-        <h6>Some words about who I am!.</h6>
+        { isTabletOrMobile && <> <h6>Some words about who I am!.</h6> </> }
       </div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      { isTabletOrMobile && <> <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> </> }
       <div className="social-media">
         <ul className="button text-center">
           <li>
@@ -74,13 +74,11 @@ const Div = styled.div`
   width: 350px;
   transform: translateX(${({ animate }) => (animate ? "0" : "100vw")});
   transition: transform 1s;
-  margin: 20px;
+  margin: 10px;
 `;
 
 const Wrapper = styled.div`
   margin-top: 2vh;
-  display: flex;
-  flex-flow: column;
   align-items: center;
 `;
 
