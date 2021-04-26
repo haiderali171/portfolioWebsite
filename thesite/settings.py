@@ -38,7 +38,7 @@ DEBUG = False
 
 # ALLOWED_HOSTS = ['.herokuapp.com']
 
-ALLOWED_HOSTS = ['104.236.14.201', 'haideralee.com', 'www.haideralee.com']
+ALLOWED_HOSTS = ['104.236.14.201', 'haideralee.com', 'www.haideralee.com', 'www.haideralee.com/blog/blog', 'www.haideralee.com/blog']
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
@@ -279,3 +279,18 @@ LOGGING = {
 
 
 DEBUG_PROPAGATE_EXCEPTIONS = True
+
+# Caching - Redis
+
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379/1",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient"
+        },
+        "KEY_PREFIX": "example"
+    }
+}
+
+CACHE_TTL = 60 * 15
