@@ -178,6 +178,11 @@ USE_L10N = True
 USE_TZ = True
 
 
+# SESSION COOKIE
+
+SESSION_COOKIE_DOMAIN = 'www.haideralee.com'
+
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
