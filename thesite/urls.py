@@ -24,6 +24,9 @@ import sys
 sys.path.append('/Users/Batman/Desktop/Programming/djangoApp/thesite/main')
 from main import views
 from . import settings
+
+
+admin.autodiscover()
  
 
 urlpatterns = [
