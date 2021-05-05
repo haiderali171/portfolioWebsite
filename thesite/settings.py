@@ -245,8 +245,8 @@ BRAINTREE_CONF = braintree.Configuration( braintree.Environment.Sandbox, BRAINTR
 #sslmode
 
 
-#options = DATABASES['default'].get('OPTIONS', {})
-#options.pop('sslmode', None)
+options = DATABASES['default'].get('OPTIONS', {})
+options.pop('sslmode', None)
 
 
 #Logging
@@ -305,10 +305,4 @@ CACHE_TTL = 60 * 15
 
 #admin auth!
 
-class AuthRequiredMiddleware(object):
-    def process_request(self, request):
-        redirect_url = '/theadmin/'
 
-        if not request.user.is_authenticated() and request.path != redirect_url:
-            return HttpResponseRedirect(redirect_url)
-        return None
