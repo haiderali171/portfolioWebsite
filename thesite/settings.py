@@ -16,6 +16,7 @@ from . import local_settings
 import braintree
 import dj_database_url
 from django.core.management.utils import get_random_secret_key  
+from django.http import HttpResponse, HttpResponseRedirect
 
 
 secret = get_random_secret_key()
@@ -82,6 +83,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'path.to.AuthRequiredMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -243,8 +245,8 @@ BRAINTREE_CONF = braintree.Configuration( braintree.Environment.Sandbox, BRAINTR
 #sslmode
 
 
-options = DATABASES['default'].get('OPTIONS', {})
-options.pop('sslmode', None)
+#options = DATABASES['default'].get('OPTIONS', {})
+#options.pop('sslmode', None)
 
 
 #Logging
@@ -299,3 +301,14 @@ CACHES = {
 }
 
 CACHE_TTL = 60 * 15
+
+
+#admin auth!
+
+class AuthRequiredMiddleware(object):
+    def process_request(self, request):
+        redirect_url = '/theadmin/'
+
+        if not request.user.is_authenticated() and request.path != redirect_url:
+            return HttpResponseRedirect(redirect_url)
+        return None
