@@ -183,7 +183,7 @@ USE_TZ = True
 
 SESSION_COOKIE_DOMAIN = 'www.haideralee.com'
 
-SESSION_COOKIE_SECURE = False
+SESSION_COOKIE_SECURE = True
 
 
 # Static files (CSS, JavaScript, Images)
