@@ -15,11 +15,19 @@ import os
 from . import local_settings
 import braintree
 import dj_database_url
-from django.core.management.utils import get_random_secret_key  
+# from django.core.management.utils import get_random_secret_key  
 from django.http import HttpResponse, HttpResponseRedirect
 
+import environ
 
-secret = get_random_secret_key()
+# Initialise environment variables
+
+env = environ.Env()
+
+environ.Env.read_env()
+
+
+secret = env(‘SECRET_KEY’)
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
