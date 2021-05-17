@@ -18,16 +18,13 @@ import dj_database_url
 # from django.core.management.utils import get_random_secret_key  
 from django.http import HttpResponse, HttpResponseRedirect
 
-import environ
+from dotenv import load_dotenv
+
+
 
 # Initialise environment variables
 
-env = environ.Env()
-
-environ.Env.read_env()
-
-# haha
-#
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
@@ -39,7 +36,7 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = os.environ['SECRET_KEY']
 
-SECRET_KEY = env('SECRET_KEY')
+SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
