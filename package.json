@@ -34,6 +34,8 @@
     "babel-loader": "^8.2.2",
     "babel-preset-es2015": "^6.24.1",
     "blueprint": "^2.1.5",
+    "g": "^2.0.1",
+    "gatsby-cli": "^3.14.2",
     "less-loader": "^9.0.0",
     "loadtest": "^5.1.2",
     "normalize.css": "^8.0.1",
