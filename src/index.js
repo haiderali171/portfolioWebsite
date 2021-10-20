@@ -1,4 +1,5 @@
 import App from './components/app2'
+/*import App1 from './components/app1'*/
 import App3 from './components/app3'
 import App4 from './components/app4'
-import BasicCardExample from './components/app5'
+/*import BasicCardExample from './components/app5'*/

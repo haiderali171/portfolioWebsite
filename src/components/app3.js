@@ -1,8 +1,6 @@
 import React, { useLayoutEffect, useRef, useState } from "react";
 import ReactDOM from "react-dom";
 import styled from "styled-components";
-import './main2.css';
-
 export const App3 = () => {
   const [show, doShow] = useState({
     itemOne: false
@@ -29,7 +27,7 @@ export const App3 = () => {
   <div className="container">
     <div className="services-heading section-heading">
       <h1>Services</h1>
-      <h6>More To Come In The Future</h6>
+      <h6>Hello! In The Future</h6>
     </div>
     <div className="my-product text-center">
       <div className="product1">

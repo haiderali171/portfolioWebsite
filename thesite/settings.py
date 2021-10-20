@@ -77,6 +77,7 @@ INSTALLED_APPS = [
     'celery',
     'thesite',
     'payment.apps.PaymentConfig',
+    'django_summernote',
     'rest_framework',
 ]
 
@@ -222,6 +223,14 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly' ]
 }
+
+
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+
+SUMMERNOTE_THEME = 'bs4'
+
+CORS_ORIGIN_ALLOW_ALL = True
+
 
 
 # Medias 

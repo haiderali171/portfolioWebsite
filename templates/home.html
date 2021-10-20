@@ -43,9 +43,6 @@
             <a href= '#portfolio' class="nav-link">Portfolio</a>
           </li>
           <li>
-            <a href=" {% url 'blog:blogapp' %} " class="nav-link">Blog</a>
-          </li>
-          <li>
             <a href= '#experience' class="nav-link">Experience</a>
           </li>
           <li>
@@ -137,6 +134,8 @@
       </div>
     </div>
   </section>
+  
+  <section class="blog1" id="blog1"></section>
 
   <section class="experience" id="experience">
     <div class="container">
@@ -243,7 +242,7 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="https://anijs.github.io/lib/anijs/anijs.js"></script>
     <script src="https://anijs.github.io/lib/anijs/helpers/scrollreveal/anijs-helper-scrollreveal.js"></script>
-    <script type="text/javascript" src=" {% static 'js/main.js' %} "></script>
-    <script type="text/javascript" src=" {% static 'frontend/main.js' %} "></script>
+    <script src=" {% static 'js/main.js' %} "></script>
+    <script src=" {% static 'frontendjs/main.js' %} "></script>
 </body>
 </html>

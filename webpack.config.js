@@ -1,14 +1,10 @@
-const HtmlWebPackPlugin = require("html-webpack-plugin");
 const path = require("path");
 const webpack = require("webpack");
 
 module.exports = {
-  entry: { 
-    "index" : "./src/index.js",
-    "blog" :  "./src/pages/blog.js"
-  },
+  entry: "./src/index.js",
   output: {
-    path: path.resolve(__dirname, "./static/frontend"),
+    path: path.resolve(__dirname, "./static/frontendjs"),
     filename: "[name].js",
   },
   module: {
@@ -29,16 +25,6 @@ module.exports = {
   },
   optimization: {
     minimize: true,
-    splitChunks: {
-      cacheGroups: {
-        vendor: {
-          test: /node_modules/,
-          chunks: "initial",
-          name: "vendor",
-          enforce: true
-        }
-      }
-    }
   },
   plugins: [
     new webpack.DefinePlugin({
@@ -46,12 +32,6 @@ module.exports = {
         // This has effect on the react lib size
         NODE_ENV: JSON.stringify("production"),
       },
-    }),
-    new HtmlWebPackPlugin({
-      chunks:["blog", "vendor"],
-      template: "./templates/blog/base.html",
-      minify: false,
-      filename: "base.html"
     }),
   ],
 };

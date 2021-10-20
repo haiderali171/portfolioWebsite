@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '5&unyr-cbl$b%%t0(e4r9&-w1$g1eyhx%#7q5jblq86)9eitxj'
+SECRET_KEY = '5&unyr-cbl$b%%t0hjdsbjadjkahkdhkjadhj'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'celery',
     'thesite',
     'payment.apps.PaymentConfig',
+    'django_summernote',
     'rest_framework',
 ]
 
@@ -197,6 +198,12 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly' ]
 }
+
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+
+SUMMERNOTE_THEME = 'bs4'
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 
 # Medias 

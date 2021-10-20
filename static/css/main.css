@@ -361,7 +361,7 @@ li{
   }
 
   .services {
-    margin-bottom: 7rem;
+    margin-top: 15rem;
   }
 }
 
@@ -471,6 +471,50 @@ li{
 
 /*Start timeline*/
 /*End timeline*/
+
+/*Start Blog*/
+
+.blog1 .container{
+  margin-top: 150px;
+  align-items: center;
+  justify-content: center;
+  display: grid;  
+  grid-gap: 10px 10px;
+}
+
+.blog1-heading{
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.blog1-heading h1{
+  font-size: 15rem;
+  font-family: 'Permanent Marker', cursive;
+  background: linear-gradient(to top, #131210, #f3f0f2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+}
+
+@media screen and (max-width:640px) {
+  .blog1-heading h1 {
+    font-size: 5rem;
+    position: relative;
+    
+  }
+
+  .blog1 {
+    margin-bottom: 7rem;
+  }
+}
+
+.blog-heading h6{
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+
+/*End Blog*/
 
 /*Start contact*/
 .contact .container{
